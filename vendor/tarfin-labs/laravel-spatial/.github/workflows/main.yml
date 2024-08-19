@@ -1,0 +1,53 @@
+name: run-tests
+
+on: [push, pull_request]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: true
+            matrix:
+                php: ['8.0', 8.1, 8.2]
+                laravel: [8, 9, 10]
+                exclude:
+                    - php: '8.0'
+                      laravel: 10
+                    - php: '8.2'
+                      laravel: 8
+
+        name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
+
+        services:
+            mysql:
+                image: mysql:8.0
+                env:
+                    MYSQL_ALLOW_EMPTY_PASSWORD: yes
+                    MYSQL_DATABASE: laravel_spatial_test
+                ports:
+                    - 3306
+                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php }}
+                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
+                  ini-values: error_reporting=E_ALL
+                  tools: composer:v2
+                  coverage: none
+
+            - name: Install dependencies
+              run: composer update --prefer-dist --no-interaction --no-progress
+
+            - name: Start database server
+              run: sudo /etc/init.d/mysql start
+
+            - name: Execute tests
+              env:
+                  DB_PORT: ${{ job.services.mysql.ports['3306'] }}
+              run: vendor/bin/phpunit --testdox --colors=always --exclude-group skipped

@@ -1,0 +1,48 @@
+[11-Dec-2023 14:09:16 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 89
+[11-Dec-2023 14:11:13 Asia/Jakarta] PHP Warning:  Undefined variable $item2_details in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 46
+[11-Dec-2023 14:11:13 Asia/Jakarta] PHP Warning:  Undefined variable $billing_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 54
+[11-Dec-2023 14:11:13 Asia/Jakarta] PHP Warning:  Undefined variable $shipping_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 55
+[11-Dec-2023 14:11:13 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 60
+[11-Dec-2023 14:11:13 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/Midtrans/Snap.php on line 97
+[11-Dec-2023 14:11:13 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/Midtrans/Snap.php on line 97
+[11-Dec-2023 14:11:13 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/Midtrans/Sanitizer.php on line 43
+[11-Dec-2023 14:11:13 Asia/Jakarta] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/Midtrans/Sanitizer.php on line 141
+[11-Dec-2023 14:11:13 Asia/Jakarta] PHP Warning:  Undefined array key "name" in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/Midtrans/Sanitizer.php on line 47
+[11-Dec-2023 14:11:13 Asia/Jakarta] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/Midtrans/Sanitizer.php on line 141
+[11-Dec-2023 14:11:44 Asia/Jakarta] PHP Warning:  Undefined variable $billing_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 54
+[11-Dec-2023 14:11:44 Asia/Jakarta] PHP Warning:  Undefined variable $shipping_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 55
+[11-Dec-2023 14:11:44 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 60
+[11-Dec-2023 14:18:34 Asia/Jakarta] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/Midtrans/Snap.php:97
+Stack trace:
+#0 /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/Midtrans/Snap.php(36): Midtrans\Snap::createTransaction()
+#1 /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process-simple-version.php(52): Midtrans\Snap::getSnapToken()
+#2 {main}
+  thrown in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/Midtrans/Snap.php on line 97
+[11-Dec-2023 14:19:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function Midtrans\printExampleWarningMessage() in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php:15
+Stack trace:
+#0 {main}
+  thrown in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 15
+[11-Dec-2023 14:19:38 Asia/Jakarta] PHP Warning:  Undefined variable $billing_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 54
+[11-Dec-2023 14:19:38 Asia/Jakarta] PHP Warning:  Undefined variable $shipping_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 55
+[11-Dec-2023 14:19:38 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 60
+[11-Dec-2023 14:20:10 Asia/Jakarta] PHP Warning:  Undefined variable $billing_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 54
+[11-Dec-2023 14:20:10 Asia/Jakarta] PHP Warning:  Undefined variable $shipping_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 55
+[11-Dec-2023 14:20:10 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 60
+[11-Dec-2023 14:21:34 Asia/Jakarta] PHP Warning:  Undefined variable $billing_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 54
+[11-Dec-2023 14:21:34 Asia/Jakarta] PHP Warning:  Undefined variable $shipping_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 55
+[11-Dec-2023 14:21:34 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 60
+[11-Dec-2023 15:40:31 Asia/Jakarta] PHP Warning:  Undefined variable $billing_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 54
+[11-Dec-2023 15:40:31 Asia/Jakarta] PHP Warning:  Undefined variable $shipping_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 55
+[11-Dec-2023 15:40:31 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 60
+[11-Dec-2023 15:40:46 Asia/Jakarta] PHP Warning:  Undefined variable $billing_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 54
+[11-Dec-2023 15:40:46 Asia/Jakarta] PHP Warning:  Undefined variable $shipping_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 55
+[11-Dec-2023 15:40:46 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 60
+[11-Dec-2023 15:41:13 Asia/Jakarta] PHP Warning:  Undefined variable $billing_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 54
+[11-Dec-2023 15:41:13 Asia/Jakarta] PHP Warning:  Undefined variable $shipping_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 55
+[11-Dec-2023 15:41:13 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 60
+[11-Dec-2023 15:42:29 Asia/Jakarta] PHP Warning:  Undefined variable $billing_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 54
+[11-Dec-2023 15:42:29 Asia/Jakarta] PHP Warning:  Undefined variable $shipping_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 55
+[11-Dec-2023 15:42:29 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 60
+[11-Dec-2023 15:45:21 Asia/Jakarta] PHP Warning:  Undefined variable $billing_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 54
+[11-Dec-2023 15:45:21 Asia/Jakarta] PHP Warning:  Undefined variable $shipping_address in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 55
+[11-Dec-2023 15:45:21 Asia/Jakarta] PHP Warning:  Undefined variable $enable_payments in /home1/fajarcod/ebike.fajarcode.com/vendor/midtrans/examples/snap/checkout-process.php on line 60

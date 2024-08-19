@@ -1,0 +1,779 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Aug 18, 2024 at 03:45 PM
+-- Server version: 10.6.18-MariaDB-cll-lve
+-- PHP Version: 8.1.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `awdlkvwh_bike`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dataa`
+--
+
+CREATE TABLE `dataa` (
+  `id` int(50) NOT NULL,
+  `lattitude` varchar(50) NOT NULL,
+  `longitude` varchar(50) NOT NULL,
+  `img` varchar(255) DEFAULT NULL,
+  `speed` varchar(50) NOT NULL,
+  `baterai` varchar(50) NOT NULL,
+  `alarmm` varchar(200) NOT NULL,
+  `musik` varchar(50) NOT NULL,
+  `relay1` int(50) NOT NULL,
+  `relay2` int(50) NOT NULL,
+  `created_time` varchar(50) NOT NULL,
+  `updated_at` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `dataa`
+--
+
+INSERT INTO `dataa` (`id`, `lattitude`, `longitude`, `img`, `speed`, `baterai`, `alarmm`, `musik`, `relay1`, `relay2`, `created_time`, `updated_at`) VALUES
+(1, '-7.947498', '112.616124', 'img/pin_logo.png', '', '', 'Kendaraan aman', '0', 0, 0, '2024-08-05 09:10:43', '12-08-2024 17:33:27'),
+(2, '-7.947302', '112.616134', 'img/E1.png', '0.02', '84', 'Kendaraan aman', '25', 0, 0, '2024-08-05 09:10:43', '13-08-2024 22:08:00'),
+(3, '-7.947261', '112.616027', 'img/E2.png', '0.02', '84', 'Kendaraan aman', '23', 0, 0, '2024-08-05 09:10:43', '10-08-2024 18:25:20'),
+(4, '-7.945544', '112.615302', 'img/E3.png', '0.02', '84', 'Kendaraan aman', '14', 0, 0, '2024-08-05 09:10:43', '10-08-2024 18:26:51'),
+(5, '-7.947269', '112.615299', 'img/E4.png', '0.02', '84', 'Kendaraan aman', '0', 0, 0, '2024-08-05 09:10:43', '2024-08-08 09:57:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ebikes`
+--
+
+CREATE TABLE `ebikes` (
+  `id` bigint(11) UNSIGNED NOT NULL,
+  `kode` varchar(255) NOT NULL,
+  `merk` varchar(255) NOT NULL,
+  `warna` varchar(255) NOT NULL,
+  `gps` varchar(255) NOT NULL,
+  `v_lock` varchar(255) NOT NULL,
+  `v_engine` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `barcode` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ebikes`
+--
+
+INSERT INTO `ebikes` (`id`, `kode`, `merk`, `warna`, `gps`, `v_lock`, `v_engine`, `status`, `foto`, `barcode`, `created_at`, `updated_at`) VALUES
+(1, '94354', 'BIRENT', 'Pink', '1', '1', '0', '0', 'bike.png', 'barcode.png', NULL, '2024-07-17 20:01:16'),
+(3, '11747', 'BIRENT', 'Green', '1', '0', '0', '1', 'green.jpeg', 'i8RsJnpxoFkf3U7ynCv7SOGB3lGX1Pm85O8OreO3.png', '2024-05-30 09:58:31', '2024-05-30 09:58:31'),
+(4, '43136', 'BIRENT', 'Blue', '1', '0', '0', '1', 'blue.jpeg', 'dJpEg2vsUILRU4S9Gq6P0BNQiYoFPvxNFXw4gwN7.png', '2024-05-30 10:02:49', '2024-05-30 10:02:49'),
+(5, '54123', 'BIRENT', 'Purple', '1', '0', '0', '1', 'purple.jpeg', 'EfwOQhIfMhehqxVZO22dyoLfHqS30n3WCc1yV5j5.png', '2024-05-30 17:15:36', '2024-05-30 17:15:36'),
+(6, '13457', 'BIRENT', 'Red', '1', '0', '0', '1', 'red.jpeg', '4DxMvUleu3KVOp3hsPzvN5IOku9utGh3XlnDBqRJ.png', '2024-05-30 17:16:29', '2024-05-30 17:16:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
+(3, '2014_10_12_100000_create_password_resets_table', 1),
+(4, '2019_08_19_000000_create_failed_jobs_table', 1),
+(5, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(6, '2023_07_10_081912_create_centre__points_table', 1),
+(7, '2023_07_10_081935_create_spots_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `minimums`
+--
+
+CREATE TABLE `minimums` (
+  `id` int(11) NOT NULL,
+  `saldo` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `minimums`
+--
+
+INSERT INTO `minimums` (`id`, `saldo`, `created_at`, `updated_at`) VALUES
+(1, '10000', NULL, '2024-06-17 20:24:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `parkirs`
+--
+
+CREATE TABLE `parkirs` (
+  `id` bigint(11) UNSIGNED NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `id_bike` bigint(11) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `parkirs`
+--
+
+INSERT INTO `parkirs` (`id`, `nama`, `id_bike`, `created_at`, `updated_at`) VALUES
+(1, 'Parkir A', 1, '2024-05-07 08:46:19', '2024-07-17 20:01:16'),
+(2, 'Parkir B', NULL, '2024-05-07 08:46:53', '2024-07-01 05:23:21'),
+(3, 'Parkir C', NULL, '2024-05-07 08:46:53', '2024-06-20 01:56:26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_reset_tokens`
+--
+
+CREATE TABLE `password_reset_tokens` (
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personal_access_tokens`
+--
+
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `points`
+--
+
+CREATE TABLE `points` (
+  `id` int(11) NOT NULL,
+  `geom` geometry NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+--
+-- Dumping data for table `points`
+--
+
+INSERT INTO `points` (`id`, `geom`, `name`, `created_at`, `updated_at`) VALUES
+(1, 0x000000000101000000ee7c3f355e275c403868af3e1eca1fc0, 'Parkir A', '2024-04-30 20:27:11', '2024-07-08 13:38:47'),
+(2, 0x0000000001010000007aa702ee79275c404ad40b3ecdc91fc0, 'Parkir B', '2024-04-30 20:27:22', '2024-07-08 13:36:59'),
+(3, 0x000000000101000000fa5e43705c275c40492eff21fdc61fc0, 'Parkir C', '2024-04-30 20:27:46', '2024-07-08 13:34:09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `polygons`
+--
+
+CREATE TABLE `polygons` (
+  `id` int(11) NOT NULL,
+  `geom` geometry NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+--
+-- Dumping data for table `polygons`
+--
+
+INSERT INTO `polygons` (`id`, `geom`, `name`, `created_at`, `updated_at`) VALUES
+(3, 0x00000000010300000001000000060000001d21037976275c4084b872f6cec81fc0a7751bd47e275c400c1f115322c91fc02d5beb8b84275c4011c4793881c91fc02a5437177f275c40c1ac50a4fbc91fc0fc34eecd6f275c404ab20e4757c91fc01d21037976275c4084b872f6cec81fc0, 'GRAHA POLINEMA', '2024-04-30 09:55:26', '2024-07-10 21:55:44'),
+(4, 0x00000000010300000001000000050000000e863aac70275c40a5bc564277c91fc006137f1475275c40280f0bb5a6c91fc08a73d4d171275c4066dcd440f3c91fc0817b9e3f6d275c4066683c11c4c91fc00e863aac70275c40a5bc564277c91fc0, 'AA', '2024-04-30 15:54:16', '2024-07-10 21:50:26'),
+(6, 0x000000000103000000010000000500000008af5dda70275c40b2dafcbfeac81fc08a592f8672275c40f6d37fd6fcc81fc0f7915b936e275c404ab20e4757c91fc075e789e76c275c40ea07759142c91fc008af5dda70275c40b2dafcbfeac81fc0, 'AB', '2024-04-30 16:06:48', '2024-07-10 21:56:30'),
+(7, 0x000000000103000000010000000500000082c98d226b275c40d3307c444cc91fc079ebfcdb65275c400ce544bb0ac91fc068e89fe062275c4034a1496249c91fc071c6302768275c405b5d4e0988c91fc082c98d226b275c40d3307c444cc91fc0, 'AV', '2024-04-30 16:08:17', '2024-07-10 22:08:51'),
+(8, 0x00000000010300000001000000050000004bccb39256275c4026e2adf36fc71fc044c18c2958275c4059a4897780c71fc0c8ed974f56275c4020b6f468aac71fc0cff8beb854275c40dcbc715298c71fc04bccb39256275c4026e2adf36fc71fc0, 'AI', '2024-04-30 16:09:21', '2024-07-10 22:45:59'),
+(9, 0x0000000001030000000100000005000000e63dce3461275c40ebc891cec0c81fc0ea5e27f565275c40295c8fc2f5c81fc0ea78cc4065275c40b114c95702c91fc0d5ec815660275c4084b872f6cec81fc0e63dce3461275c40ebc891cec0c81fc0, 'AE', '2024-04-30 16:12:00', '2024-07-10 22:14:18'),
+(10, 0x0000000001030000000100000005000000594dd7135d275c400dab7823f3c81fc0e04c4c1762275c4034677dca31c91fc0e63dce3461275c4006b98b3045c91fc0d788601c5c275c406d5512d907c91fc0594dd7135d275c400dab7823f3c81fc0, 'AF', '2024-04-30 16:12:18', '2024-07-10 22:05:33'),
+(11, 0x0000000001030000000100000005000000fa6184f068275c405b971aa19fc91fc07cf2b0506b275c4099f04bfdbcc91fc06bd5ae0969275c40dd239babe6c91fc05ab8acc266275c401cec4d0cc9c91fc0fa6184f068275c405b971aa19fc91fc0, 'AG', '2024-04-30 16:12:57', '2024-07-10 21:49:14'),
+(12, 0x0000000001030000000100000005000000fbaf73d366275c40b03bdd79e2c91fc06e8b321b64275c40eeceda6d17ca1fc067800bb265275c4043ff04172bca1fc06bef535568275c4066dcd440f3c91fc0fbaf73d366275c40b03bdd79e2c91fc0, 'AH', '2024-04-30 16:13:16', '2024-08-07 22:42:38'),
+(13, 0x000000000103000000010000000500000072fa7abe66275c406d1b4641f0c81fc0001fbc7669275c40c8258e3c10c91fc0778368ad68275c407ec6850321c91fc001a1f5f065275c40b7d100de02c91fc072fa7abe66275c406d1b4641f0c81fc0, 'AC', '2024-04-30 18:18:59', '2024-07-10 22:10:57'),
+(14, 0x0000000001030000000100000005000000ebc6bb2363275c4052f17f4754c81fc073486aa164275c4024438ead67c81fc057b1f84d61275c407347ffcbb5c81fc0d50627a25f275c402f4e7cb5a3c81fc0ebc6bb2363275c4052f17f4754c81fc0, 'AD', '2024-04-30 18:20:27', '2024-07-10 22:15:45'),
+(15, 0x000000000103000000010000000500000065e1eb6b5d275c40b9533a58ffc71fc0e657738060275c40b3edb43522c81fc0dbdd03745f275c4014984eeb36c81fc05a677c5f5c275c409cdcef5014c81fc065e1eb6b5d275c40b9533a58ffc71fc0, 'AJ', '2024-04-30 18:21:42', '2024-07-10 22:30:41'),
+(16, 0x0000000001030000000100000005000000d8d64fff59275c407bfa08fce1c71fc054909f8d5c275c40759483d904c81fc0cbf44bc45b275c402b357ba015c81fc05512d90759275c40309b00c3f2c71fc0d8d64fff59275c407bfa08fce1c71fc0, 'AK', '2024-04-30 18:22:42', '2024-07-10 22:29:57'),
+(17, 0x0000000001030000000100000005000000450f7c0c56275c4009dffb1bb4c71fc0c685032159275c4091d10149d8c71fc0562c7e5358275c404772f90fe9c71fc04b00fe2955275c4031276893c3c71fc0450f7c0c56275c4009dffb1bb4c71fc0, 'AL', '2024-04-30 18:22:57', '2024-07-10 22:48:43'),
+(18, 0x0000000001030000000100000005000000b81e85eb51275c40c5e57805a2c71fc0c498f4f752275c4081ecf5ee8fc71fc051bd35b055275c40dcf63deaafc71fc04643c6a354275c4020f0c000c2c71fc0b81e85eb51275c40c5e57805a2c71fc0, 'AM', '2024-04-30 18:23:19', '2024-07-10 22:44:56'),
+(19, 0x0000000001030000000100000005000000bf0f070951275c4081b2295778c71fc04791b58652275c40878c47a984c71fc042ee224c51275c4097fdbad39dc71fc042226de34f275c4081ecf5ee8fc71fc0bf0f070951275c4081b2295778c71fc0, 'AU', '2024-04-30 18:23:33', '2024-08-08 02:42:52'),
+(20, 0x00000000010300000001000000050000009701672959275c40f98557923cc71fc04eed0c535b275c4015376e313fc71fc0d333bdc458275c40e222f77475c71fc0c2fc153257275c402c82ffad64c71fc09701672959275c40f98557923cc71fc0, 'AS', '2024-04-30 18:25:15', '2024-07-10 22:27:26'),
+(21, 0x00000000010300000001000000050000007e74eaca67275c409cdcef5014c81fc0b3ec496073275c40f6eb4e779ec81fc03128d36872275c407347ffcbb5c81fc078d1579066275c403ba6eeca2ec81fc07e74eaca67275c409cdcef5014c81fc0, 'AX', '2024-04-30 18:26:13', '2024-07-10 21:57:17'),
+(22, 0x000000000103000000010000000500000068e89fe062275c4071e7c2482fca1fc078d1579066275c40e202d0285dca1fc0f03504c765275c4098a3c7ef6dca1fc05d6e30d461275c40b5e0455f41ca1fc068e89fe062275c4071e7c2482fca1fc0, 'AO', '2024-04-30 18:26:46', '2024-08-07 22:43:26'),
+(24, 0x0000000001030000000100000005000000eecd6f9868275c40c68b852172ca1fc07a7077d66e275c4064c91ccbbbca1fc075cde49b6d275c40753a90f5d4ca1fc078b7b24467275c40f3ad0feb8dca1fc0eecd6f9868275c40c68b852172ca1fc0, 'AQ', '2024-04-30 18:27:20', '2024-07-11 21:50:54'),
+(25, 0x00000000010300000001000000050000001764cbf275275c4093fe5e0a0fca1fc00229b16b7b275c40f9bce2a947ca1fc0ed9c668176275c40815d4d9eb2ca1fc08b8d791d71275c40f373435376ca1fc01764cbf275275c4093fe5e0a0fca1fc0, 'AW', '2024-04-30 18:28:26', '2024-07-10 21:52:34'),
+(26, 0x0000000001030000000100000005000000e31c75745c275c40ce177b2fbec81fc065c746205e275c40a1698995d1c81fc0eeb089cc5c275c40c311a452ecc81fc0cb0ef10f5b275c406de179a9d8c81fc0e31c75745c275c40ce177b2fbec81fc0, 'AR', '2024-04-30 18:29:47', '2024-07-10 22:14:53'),
+(29, 0x0000000001030000000100000006000000f436363b52275c401de5603601c61fc0d2e5cde15a275c407d2079e750c61fc0b80721205f275c40fa635a9bc6c61fc0ea758bc058275c40dd9a745b22c71fc05ccccf0d4d275c4099620e828ec61fc0f436363b52275c401de5603601c61fc0, 'TI & TS', '2024-04-30 20:08:07', '2024-08-08 01:10:27'),
+(30, 0x0000000001030000000100000006000000a8e49cd843275c40457f68e6c9c51fc02efeb62748275c402429e96168c51fc0f46a80d250275c40c8b4368dedc51fc00f63d2df4b275c404a0c022b87c61fc061527c7c42275c4006651a4d2ec61fc0a8e49cd843275c40457f68e6c9c51fc0, 'Teknik Mesin', '2024-04-30 20:08:43', '2024-07-10 22:50:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `polylines`
+--
+
+CREATE TABLE `polylines` (
+  `id` int(11) NOT NULL,
+  `geom` geometry NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+--
+-- Dumping data for table `polylines`
+--
+
+INSERT INTO `polylines` (`id`, `geom`, `name`, `created_at`, `updated_at`) VALUES
+(1, 0x000000000103000000010000003600000075cde49b6d275c408bfed0cc93cb1fc044696ff085275c40064a0a2c80c91fc046d1031f83275c409411178046c91fc05c548b8862275c40ca1649bbd1c71fc062f71dc363275c40ae2b6684b7c71fc0d520cced5e275c403c2d3f7095c71fc08f8eab915d275c40b4006dab59c71fc0789acc785b275c40107a36ab3ec71fc096cd1c925a275c40f98557923cc71fc04930d5cc5a275c40923b6c2233c71fc0fb928d075b275c40765089eb18c71fc0ec14ab0661275c40105839b4c8c61fc07e71a94a5b275c406ccceb8843c61fc00f9a5df756275c4039b35da10fc61fc0ca6fd1c952275c40f5b9da8afdc51fc0aed85f764f275c40bde3141dc9c51fc05b9885764e275c40eb5223f433c51fc0d734ef3845275c40520c906802c51fc07e1d386744275c400890a16307c51fc066f50eb743275c405dddb1d826c51fc031b43a3943275c40f7065f984cc51fc013b534b742275c4062bce6559dc51fc091d6187442275c4051bf0b5bb3c51fc073d712f241275c40ce1abcafcac51fc0855ca96741275c40b77d8ffaebc51fc0855ca96741275c40a663ce33f6c51fc032e884d041275c40177fdb1324c61fc0c1745ab741275c40e90ab6114fc61fc0de73603942275c4089b7cebf5dc61fc042d13c8045275c4006f6984869c61fc0e71da7e848275c404415fe0c6fc61fc093a9825149275c40e3a430ef71c61fc0e6e95c514a275c40994528b682c61fc00281cea44d275c402db29defa7c61fc096b036c64e275c40bb270f0bb5c61fc0c500892650275c4088bce5eac7c61fc065deaaeb50275c404f948444dac61fc0caa31b6151275c401c295b24edc61fc0772ff7c951275c406022de3affc61fc0fa0d130d52275c40603fc4060bc71fc05fd3838252275c403dee5bad13c71fc0dbc01da853275c401b9df3531cc71fc0ffb0a54753275c40f816d68d77c71fc0c05df6eb4e275c404850fc1873c71fc00e2f88484d275c40ae9ae7887cc71fc076aa7ccf48275c402b8716d9cec71fc033535a7f4b275c408048bf7d1dc81fc0cc423ba759275c40ce3461fbc9c81fc0d481aca756275c40cee2c5c210c91fc0a6b6d4415e275c40c72aa5677ac91fc0fb928d075b275c4094331477bcc91fc0adc1fbaa5c275c407dd0b359f5c91fc02ac93a1c5d275c40b459f5b9daca1fc075cde49b6d275c408bfed0cc93cb1fc0, 'Perbatasan Lokasi', '2024-07-08 16:40:51', '2024-08-07 22:44:06'),
+(2, 0x000000000103000000010000003b0000001b9c887e6d275c40e01115aa9bcb1fc044696ff085275c40064a0a2c80c91fc046d1031f83275c409411178046c91fc05c548b8862275c40ca1649bbd1c71fc062f71dc363275c40ae2b6684b7c71fc0d520cced5e275c403c2d3f7095c71fc08f8eab915d275c40b4006dab59c71fc0789acc785b275c40107a36ab3ec71fc096cd1c925a275c40f98557923cc71fc04930d5cc5a275c40923b6c2233c71fc0fb928d075b275c40765089eb18c71fc0ec14ab0661275c40105839b4c8c61fc07e71a94a5b275c406ccceb8843c61fc00f9a5df756275c4039b35da10fc61fc0ca6fd1c952275c40f5b9da8afdc51fc0aed85f764f275c40bde3141dc9c51fc05b9885764e275c40eb5223f433c51fc0d734ef3845275c40520c906802c51fc07e1d386744275c400890a16307c51fc066f50eb743275c405dddb1d826c51fc031b43a3943275c40f7065f984cc51fc013b534b742275c4062bce6559dc51fc091d6187442275c4051bf0b5bb3c51fc073d712f241275c40ce1abcafcac51fc0855ca96741275c40b77d8ffaebc51fc0855ca96741275c40a663ce33f6c51fc032e884d041275c40177fdb1324c61fc0c1745ab741275c40e90ab6114fc61fc0de73603942275c4089b7cebf5dc61fc042d13c8045275c4006f6984869c61fc0e71da7e848275c404415fe0c6fc61fc093a9825149275c40e3a430ef71c61fc0e6e95c514a275c40994528b682c61fc00281cea44d275c402db29defa7c61fc096b036c64e275c40bb270f0bb5c61fc0c500892650275c4088bce5eac7c61fc065deaaeb50275c404f948444dac61fc0caa31b6151275c401c295b24edc61fc0772ff7c951275c406022de3affc61fc0fa0d130d52275c40603fc4060bc71fc05fd3838252275c403dee5bad13c71fc0dbc01da853275c401b9df3531cc71fc0ffb0a54753275c40f816d68d77c71fc0c05df6eb4e275c404850fc1873c71fc00e2f88484d275c40ae9ae7887cc71fc076aa7ccf48275c402b8716d9cec71fc033535a7f4b275c408048bf7d1dc81fc0cc423ba759275c40ce3461fbc9c81fc0d481aca756275c40cee2c5c210c91fc0a6b6d4415e275c40c72aa5677ac91fc0e202d0285d275c40b00111e2cac91fc05f0a0f9a5d275c406c425a63d0c91fc0dbdd03745f275c401c430070ecc91fc0ecfa05bb61275c40328e91ec11ca1fc0daa9b9dc60275c408d98d9e731ca1fc0d5ec815660275c4027c286a757ca1fc0dbf7a8bf5e275c403d47e4bb94ca1fc02ac93a1c5d275c40b459f5b9daca1fc01b9c887e6d275c40e01115aa9bcb1fc0, 'Perbatasan Lokasi', '2024-07-08 16:40:51', '2024-08-03 13:54:55'),
+(9, 0x00000000010200000005000000e9818fc18a275c4081785dbf60c71fc0742497ff90275c409240834d9dc71fc0b30c71ac8b275c406971c63027c81fc062821abe85275c40b3791c06f3c71fc0e9818fc18a275c4081785dbf60c71fc0, '1', '2024-08-16 00:26:28', '2024-08-16 00:26:28'),
+(10, 0x00000000010200000005000000a471a8df85275c4036583849f3c71fc0ee3ec7478b275c400457790261c71fc0333509de90275c405f9b8d9598c71fc0ef586c938a275c4036e9b6442ec81fc0a471a8df85275c4036583849f3c71fc0, 'E-BIKE', '2024-08-16 00:27:21', '2024-08-16 00:27:21'),
+(11, 0x00000000010200000004000000dfa3fe7a85275c40d50451f701c81fc0249a40118b275c401b4b581b63c71fc080d250a390275c400f62670a9dc71fc066a3737e8a275c40cfd8976c3cc81fc0, 'a', '2024-08-16 00:28:08', '2024-08-16 00:28:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `saldos`
+--
+
+CREATE TABLE `saldos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `id_user` bigint(20) UNSIGNED NOT NULL,
+  `topup` int(11) NOT NULL,
+  `saldo` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `saldos`
+--
+
+INSERT INTO `saldos` (`id`, `id_user`, `topup`, `saldo`, `created_at`, `updated_at`) VALUES
+(7, 6, 10, 10, '2024-05-11 23:15:04', '2024-05-11 23:15:04'),
+(8, 6, 500, 510, '2024-05-11 23:16:47', '2024-05-11 23:16:47'),
+(9, 6, 10000, 10510, '2024-05-24 22:19:14', '2024-05-24 22:19:14'),
+(10, 6, 10000, 18010, '2024-05-30 17:24:03', '2024-05-30 17:24:03'),
+(12, 7, 15000, 15000, '2024-06-03 00:15:25', '2024-06-03 00:15:25'),
+(13, 6, 100000, 103010, '2024-06-10 03:35:35', '2024-06-10 03:35:35'),
+(15, 6, 10000, 110510, '2024-06-11 21:10:27', '2024-06-11 21:10:27'),
+(16, 16, 15000, 15000, '2024-06-19 23:59:00', '2024-06-19 23:59:00'),
+(17, 18, 10000, 10000, '2024-06-20 00:03:27', '2024-06-20 00:03:27'),
+(18, 8, 100000, 100000, '2024-06-20 00:03:57', '2024-06-20 00:03:57'),
+(19, 17, 10000, 10000, '2024-06-20 00:06:21', '2024-06-20 00:06:21'),
+(20, 15, 20000, 20000, '2024-06-20 00:08:58', '2024-06-20 00:08:58'),
+(21, 19, 25000, 25000, '2024-06-20 00:10:15', '2024-06-20 00:10:15'),
+(22, 22, 20000, 20000, '2024-06-20 00:21:11', '2024-06-20 00:21:11'),
+(23, 21, 12000, 12000, '2024-06-20 00:26:02', '2024-06-20 00:26:02'),
+(24, 20, 20000, 20000, '2024-06-20 00:27:30', '2024-06-20 00:27:30'),
+(25, 23, 25000, 25000, '2024-06-20 00:44:07', '2024-06-20 00:44:07'),
+(26, 25, 10000, 10000, '2024-06-20 00:49:11', '2024-06-20 00:49:11'),
+(27, 25, 10000, 20000, '2024-06-20 00:49:50', '2024-06-20 00:49:50'),
+(28, 26, 20000, 20000, '2024-06-20 00:58:42', '2024-06-20 00:58:42'),
+(29, 24, 15000, 15000, '2024-06-20 00:59:12', '2024-06-20 00:59:12'),
+(30, 27, 10000, 10000, '2024-06-20 01:10:31', '2024-06-20 01:10:31'),
+(31, 28, 20000, 20000, '2024-06-20 01:20:27', '2024-06-20 01:20:27'),
+(32, 29, 20000, 20000, '2024-06-20 01:43:53', '2024-06-20 01:43:53'),
+(33, 30, 15000, 15000, '2024-06-20 01:50:15', '2024-06-20 01:50:15'),
+(34, 31, 15000, 15000, '2024-06-20 02:03:33', '2024-06-20 02:03:33'),
+(35, 32, 24000, 24000, '2024-06-20 02:11:52', '2024-06-20 02:11:52'),
+(36, 33, 15000, 15000, '2024-06-25 23:08:42', '2024-06-25 23:08:42'),
+(37, 34, 15000, 15000, '2024-06-26 00:19:11', '2024-06-26 00:19:11'),
+(38, 35, 10000, 10000, '2024-06-26 00:26:23', '2024-06-26 00:26:23'),
+(39, 36, 10000, 10000, '2024-06-26 00:29:26', '2024-06-26 00:29:26'),
+(40, 37, 10000, 10000, '2024-06-27 00:24:17', '2024-06-27 00:24:17'),
+(41, 38, 15000, 15000, '2024-06-27 00:44:11', '2024-06-27 00:44:11'),
+(42, 39, 10000, 10000, '2024-06-27 00:44:27', '2024-06-27 00:44:27'),
+(43, 43, 22000, 22000, '2024-06-27 00:45:55', '2024-06-27 00:45:55'),
+(44, 41, 10000, 10000, '2024-06-27 00:45:59', '2024-06-27 00:45:59'),
+(45, 40, 10000, 10000, '2024-06-27 00:47:06', '2024-06-27 00:47:06'),
+(46, 42, 20000, 20000, '2024-06-27 00:53:06', '2024-06-27 00:53:06'),
+(47, 45, 50000, 50000, '2024-06-27 01:01:19', '2024-06-27 01:01:19'),
+(48, 47, 25000, 25000, '2024-06-27 03:44:08', '2024-06-27 03:44:08'),
+(49, 12, 20000, 20000, '2024-06-30 22:29:21', '2024-06-30 22:29:21'),
+(50, 49, 15000, 15000, '2024-06-30 23:07:17', '2024-06-30 23:07:17'),
+(51, 50, 15000, 15000, '2024-06-30 23:30:21', '2024-06-30 23:30:21'),
+(52, 52, 15000, 15000, '2024-06-30 23:31:41', '2024-06-30 23:31:41'),
+(53, 54, 10000, 10000, '2024-06-30 23:32:23', '2024-06-30 23:32:23'),
+(54, 55, 15000, 15000, '2024-06-30 23:40:23', '2024-06-30 23:40:23'),
+(55, 53, 15000, 15000, '2024-06-30 23:41:34', '2024-06-30 23:41:34'),
+(56, 56, 15000, 15000, '2024-06-30 23:54:44', '2024-06-30 23:54:44'),
+(57, 58, 15000, 15000, '2024-07-01 00:01:09', '2024-07-01 00:01:09'),
+(58, 57, 20000, 20000, '2024-07-01 00:01:33', '2024-07-01 00:01:33'),
+(59, 59, 18000, 18000, '2024-07-01 00:41:52', '2024-07-01 00:41:52'),
+(60, 60, 15000, 15000, '2024-07-01 00:55:48', '2024-07-01 00:55:48'),
+(61, 63, 1000000, 1000000, '2024-07-17 07:29:22', '2024-07-17 07:29:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sewas`
+--
+
+CREATE TABLE `sewas` (
+  `id` bigint(11) UNSIGNED NOT NULL,
+  `id_user` bigint(11) UNSIGNED NOT NULL,
+  `id_bike` bigint(11) UNSIGNED NOT NULL,
+  `durasi` varchar(255) NOT NULL,
+  `tagihan` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `foto_kembali` varchar(255) DEFAULT NULL,
+  `datetime` timestamp NULL DEFAULT current_timestamp(),
+  `datetime_kembali` timestamp NULL DEFAULT NULL,
+  `waktu` time DEFAULT current_timestamp(),
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sewas`
+--
+
+INSERT INTO `sewas` (`id`, `id_user`, `id_bike`, `durasi`, `tagihan`, `status`, `foto_kembali`, `datetime`, `datetime_kembali`, `waktu`, `created_at`, `updated_at`) VALUES
+(5, 6, 1, '5', '2500', '0', 'dg3EkoOqpUCrljsN8Ab5d02eXJQYKhheIBa4TwnJ.jpg', '2024-05-25 05:20:41', '2024-05-25 05:23:20', '12:20:41', '2024-05-24 22:20:41', '2024-05-24 22:23:20'),
+(6, 6, 1, '5', '2500', '0', 'wMr90hDDgn6JpGwBM5KsiMbSlStq7xMYkJQ68y9V.jpg', '2024-06-01 05:31:17', '2024-06-01 05:33:10', '12:31:17', '2024-05-31 22:31:17', '2024-05-31 22:33:10'),
+(7, 6, 1, '5', '2500', '0', 'QDMbjQSz2SJE0AhNIbfsg9OyLFQct2yuDzjvN6st.jpg', '2024-06-02 07:38:28', '2024-06-02 07:41:11', '14:38:28', '2024-06-02 00:38:28', '2024-06-02 00:41:11'),
+(8, 6, 1, '5', '2500', '0', 'urbsbQs4edlYT4fdLMACWwarOVrUDdFYueDXQNQm.jpg', '2024-06-02 07:41:39', '2024-06-02 07:44:03', '14:41:39', '2024-06-02 00:41:39', '2024-06-02 00:44:03'),
+(9, 7, 1, '15', '7500', '0', 'AUNBO7p5Sv5XfR0qWtrmFcyh0mJZewLQ1HfPjkrz.jpg', '2024-06-03 07:16:10', '2024-06-03 07:19:13', '14:16:10', '2024-06-03 00:16:10', '2024-06-03 00:19:13'),
+(10, 6, 1, '5', '2500', '0', 'LphXxKqQ6px0YwdQb5xaeOwuZhXiiFyjlsMxfWsr.jpg', '2024-06-07 11:24:21', '2024-06-07 11:25:10', '18:24:21', '2024-06-07 04:24:21', '2024-06-07 04:25:10'),
+(11, 6, 1, '5', '2500', '0', 'TlZGo1bycMjbzB5dQb69L8pY9rc1tTLwf8GaUj4i.jpg', '2024-06-10 10:23:57', '2024-06-10 10:25:01', '17:23:57', '2024-06-10 03:23:57', '2024-06-10 03:25:01'),
+(12, 6, 1, '5', '2500', '0', 'RBUJajbtWpHiTCYOIreU1cTNliwWj6UJNkiqSebT.jpg', '2024-06-10 10:27:14', '2024-06-10 10:32:57', '17:27:14', '2024-06-10 03:27:14', '2024-06-10 03:32:57'),
+(13, 6, 1, '5', '2500', '0', 'SxEejl4UEYWxr0vKdncZA2g4K6Gh02fmKGjNY8rd.jpg', '2024-06-10 10:37:16', '2024-06-10 10:38:06', '17:37:16', '2024-06-10 03:37:16', '2024-06-10 03:38:06'),
+(16, 6, 1, '5', '2500', '0', '3VDPeHhkUrU8NlsnCQlpxFjw7S2SzSej0IamwW0Q.jpg', '2024-06-14 05:25:15', '2024-06-14 05:27:48', '12:25:15', '2024-06-13 22:25:15', '2024-06-13 22:27:48'),
+(17, 6, 1, '5', '2500', '0', 'byKqgThcQQDKwMqWBvVezUR95VnIgZo1Ifb8vnBf.jpg', '2024-06-15 00:17:22', '2024-06-15 00:20:59', '07:17:22', '2024-06-14 17:17:22', '2024-06-14 17:20:59'),
+(18, 6, 1, '5', '2500', '0', 'UT32EwwQV1nj3CG0pdVofvPlkD1KrIhsEmTkLN6m.jpg', '2024-06-15 00:21:21', '2024-06-15 00:35:16', '07:21:21', '2024-06-14 17:21:21', '2024-06-14 17:35:16'),
+(19, 6, 1, '5', '2500', '0', '9tW3YsfPBVxqtX54yEYZaMmZ7RrsYeISPFyhM2tS.jpg', '2024-06-15 00:37:12', '2024-06-15 00:46:21', '07:37:12', '2024-06-14 17:37:12', '2024-06-14 17:46:21'),
+(20, 7, 1, '5', '2500', '0', 'OKyNqyR6vbFMfFhNpnKjku6gD88IPh57N0y7OoXJ.jpg', '2024-06-15 00:54:17', '2024-06-15 01:03:02', '07:54:17', '2024-06-14 17:54:17', '2024-06-14 18:03:02'),
+(21, 7, 1, '5', '2500', '0', 'XHjd7OnE7AfsfNqognBFx5ItDbEXkeUPM3PpONcc.jpg', '2024-06-15 01:01:07', '2024-06-15 01:01:51', '08:01:07', '2024-06-14 18:01:07', '2024-06-14 18:01:51'),
+(22, 7, 1, '5', '2500', '0', 'R3RjFGs7WmtJvlzji7MUniBPIGW7gx3bWnoMCnlc.jpg', '2024-06-15 01:02:23', '2024-06-15 01:02:43', '08:02:23', '2024-06-14 18:02:23', '2024-06-14 18:02:43'),
+(23, 6, 1, '5', '2500', '0', 'wTq3nMipuKGlyC14pdBDpniAGdtawgct0W0EyGmw.jpg', '2024-06-15 01:03:39', '2024-06-15 01:04:35', '08:03:39', '2024-06-14 18:03:39', '2024-06-14 18:04:35'),
+(24, 6, 1, '5', '2500', '0', '4ysidR7Y2AguGSfs1ZjyVXfwXnAbw8YDuv1xiaCY.jpg', '2024-06-15 01:05:26', '2024-06-15 01:11:37', '08:05:26', '2024-06-14 18:05:26', '2024-06-14 18:11:37'),
+(25, 6, 1, '5', '2500', '0', 'bewK46rPzmLToF64UYPQ44vwqtPerK6vbRpmq3HA.jpg', '2024-06-15 01:14:45', '2024-06-15 01:22:22', '08:14:45', '2024-06-14 18:14:45', '2024-06-14 18:22:22'),
+(26, 6, 1, '5', '2500', '0', 'DhSNornrMK9dMjaRBt2ELoExGysvECptJWqriN2m.jpg', '2024-06-15 01:22:48', '2024-06-15 01:28:23', '08:22:48', '2024-06-14 18:22:48', '2024-06-14 18:28:23'),
+(29, 6, 1, '5', '2500', '0', 'iGnn12pSfYE8vlSAMXzCAuqwtXU4QGZToYfWDsxy.jpg', '2024-06-18 10:17:54', '2024-06-18 10:32:26', '17:17:54', '2024-06-18 03:17:54', '2024-06-18 03:32:26'),
+(30, 6, 1, '5', '2500', '0', '9qjqC45bo5k7V3PfOIEXsUi6I62m1oTsu82XvrCh.jpg', '2024-06-18 10:29:47', '2024-06-18 10:31:20', '17:29:47', '2024-06-18 03:29:47', '2024-06-18 03:31:20'),
+(31, 14, 1, '1', '2500', '2', NULL, '2024-06-20 12:17:17', NULL, '19:17:17', '2024-06-18 06:54:17', '2024-06-20 05:18:17'),
+(32, 6, 1, '5', '2500', '0', 'hS0fSv6HeHYQaVCF1v0HjZNX5aXZnn2cL37YfWK2.jpg', '2024-06-19 03:16:14', '2024-06-19 03:16:53', '10:16:14', '2024-06-18 20:16:14', '2024-06-18 20:16:53'),
+(33, 6, 1, '5', '2500', '0', '4x2khJ0pKoCsvUujKzCqG7FEQWjQ9vvZDhfskoTU.jpg', '2024-06-19 09:53:11', '2024-06-19 09:59:36', '16:53:11', '2024-06-19 02:53:11', '2024-06-19 02:59:36'),
+(34, 6, 1, '5', '2500', '0', 'WATzg0shx7dcRbut8kgh9imVoKBCyrDzmhh5bqld.jpg', '2024-06-19 10:01:08', '2024-06-19 10:01:28', '17:01:08', '2024-06-19 03:01:08', '2024-06-19 03:01:28'),
+(35, 6, 1, '5', '2500', '0', 'gdzvcRh679JNysoqUzhcM0SgLP1agm6eJN3uYM9z.jpg', '2024-06-20 05:18:42', '2024-06-20 05:37:05', '12:18:42', '2024-06-19 22:18:42', '2024-06-19 22:37:05'),
+(36, 6, 1, '5', '2500', '0', 'Sm3cDDmVFLo3dUvCQ9Ka9psz7WiE5rPtQOOGrxt0.jpg', '2024-06-20 05:28:35', '2024-06-20 05:35:27', '12:28:35', '2024-06-19 22:28:35', '2024-06-19 22:35:27'),
+(37, 6, 1, '5', '2500', '0', '75vpYSI9JRWlPnfylKKfy8Q2ac6l2HYNytYOneCq.jpg', '2024-06-20 05:37:40', '2024-06-20 05:41:30', '12:37:40', '2024-06-19 22:37:40', '2024-06-19 22:41:30'),
+(38, 18, 1, '5', '2500', '0', '6rRwDb6F8tJIV6zBbLIRnpvGMJTNxsOtlw9v0ktc.jpg', '2024-06-20 07:04:39', '2024-06-20 07:14:17', '14:04:39', '2024-06-20 00:04:39', '2024-06-20 00:14:17'),
+(39, 17, 1, '15', '7500', '0', 't1IsG8bolIGDZUc1jHg5GjcFAUlcpeEePg9yo6A8.jpg', '2024-06-20 07:06:58', '2024-06-20 07:25:24', '14:06:58', '2024-06-20 00:06:58', '2024-06-20 00:25:24'),
+(40, 19, 1, '5', '2500', '0', 'MXSIep9Prm3KN2XQmhujAZOKROm1BEItJsZAwOKZ.jpg', '2024-06-20 07:12:49', '2024-06-20 07:16:49', '14:12:49', '2024-06-20 00:12:49', '2024-06-20 00:16:49'),
+(41, 16, 1, '5', '2500', '0', 'OhppOwml2OjWAMV7CKThdwBVr46rqmcyaZYvOA64.jpg', '2024-06-20 07:18:37', '2024-06-20 07:23:08', '14:18:37', '2024-06-20 00:18:37', '2024-06-20 00:23:08'),
+(42, 22, 1, '15', '7500', '0', 'JMM1l2kqwshatE17s4iXMlZuSFA0iAoYIeZ8TFkw.jpg', '2024-06-20 07:21:40', '2024-06-20 07:28:50', '14:21:40', '2024-06-20 00:21:40', '2024-06-20 00:28:50'),
+(43, 20, 1, '5', '2500', '0', 'KTTDPD9dvy6eo4hlwYHPgUC4PErjNCyncYEtPxU9.jpg', '2024-06-20 07:28:34', '2024-06-20 07:34:19', '14:28:34', '2024-06-20 00:28:34', '2024-06-20 00:34:19'),
+(44, 21, 1, '5', '2500', '0', 'WXAnHWPSQTd0M2pAmzqJzomD1E0hVTxKsZQ8wnar.jpg', '2024-06-20 07:30:52', '2024-06-20 07:34:19', '14:30:52', '2024-06-20 00:30:52', '2024-06-20 00:34:19'),
+(45, 23, 1, '5', '2500', '0', 'LAM50oEjUbe1dj7YxjnWNKgdoOPC6d7s2bNKsPSS.jpg', '2024-06-20 07:45:22', '2024-06-20 07:48:15', '14:45:22', '2024-06-20 00:45:22', '2024-06-20 00:48:15'),
+(46, 25, 1, '15', '7500', '0', 'tOwq3f6KfC3Jo6AE1Ba5OjtUIdBUWyx11WDbHuMQ.jpg', '2024-06-20 07:50:28', '2024-06-20 07:51:30', '14:50:28', '2024-06-20 00:50:28', '2024-06-20 00:51:30'),
+(47, 26, 1, '35', '17500', '0', 'p5vAUhYFyuyAZ7LikNSGLTptbcOrr52vboAjY8JI.jpg', '2024-06-20 07:59:15', '2024-06-20 08:06:06', '14:59:15', '2024-06-20 00:59:15', '2024-06-20 01:06:06'),
+(48, 24, 1, '5', '2500', '0', 'eWXA0dlAnZDNr9XO78Z0KPcLPlt53FIysD74RyvA.jpg', '2024-06-20 08:01:17', '2024-06-20 08:06:31', '15:01:17', '2024-06-20 01:01:17', '2024-06-20 01:06:31'),
+(49, 27, 1, '5', '2500', '0', 'EyQhiO6OUdryVg313Tge188XXRvKqDHQH0DiwWLm.jpg', '2024-06-20 08:11:22', '2024-06-20 08:13:32', '15:11:22', '2024-06-20 01:11:22', '2024-06-20 01:13:32'),
+(50, 28, 1, '15', '7500', '0', 'CF0x7RFDyXtm3PhNMFeQdZ0vdmFi362fqpQcBbbf.jpg', '2024-06-20 08:22:14', '2024-06-20 08:24:42', '15:22:14', '2024-06-20 01:22:14', '2024-06-20 01:24:42'),
+(51, 29, 1, '15', '7500', '0', 'psuXw2ZBZVl06spWo3MtpK0KLCUMc0Q4C3kIviNH.jpg', '2024-06-20 08:44:32', '2024-06-20 08:49:20', '15:44:32', '2024-06-20 01:44:32', '2024-06-20 01:49:20'),
+(52, 30, 1, '15', '7500', '0', 'UP03ZnrRT1Ac9Xwgxbfp7uKV4JuH7HI6KrmL8vNc.jpg', '2024-06-20 08:56:26', '2024-06-20 08:57:30', '15:56:26', '2024-06-20 01:56:26', '2024-06-20 01:57:30'),
+(53, 31, 1, '15', '7500', '0', '9TxOQBLtF7zthZMnIwoGc3Om1FlI9wKLa6fC1edH.jpg', '2024-06-20 09:03:57', '2024-06-20 09:08:26', '16:03:57', '2024-06-20 02:03:57', '2024-06-20 02:08:27'),
+(54, 32, 1, '35', '17500', '0', 'YpSr8UISvOoSRNdRosZQEYR8ZaVxk2zyZvmE1i3A.jpg', '2024-06-20 09:16:39', '2024-06-20 09:20:39', '16:16:39', '2024-06-20 02:16:39', '2024-06-20 02:20:39'),
+(55, 6, 1, '5', '2500', '0', 'fY18bYmLPqxLM9BfmBcYPqUv5k7BIRC4LPdp24K0.png', '2024-06-20 12:48:19', '2024-06-20 12:55:45', '19:48:19', '2024-06-20 05:48:19', '2024-06-20 05:55:45'),
+(56, 6, 1, '5', '2500', '0', 'mcHfX1xLhNROgzoOHI8y7dzHW4Im3Wls9Slfio6n.jpg', '2024-06-25 07:49:00', '2024-06-25 07:52:09', '14:49:00', '2024-06-25 00:49:00', '2024-06-25 00:52:09'),
+(57, 6, 1, '5', '2500', '0', '2TgNZr3yxy8WF8e2smelvuPAoF3N3r1IgeGbi9B9.jpg', '2024-06-25 07:52:35', '2024-06-25 08:02:05', '14:52:35', '2024-06-25 00:52:35', '2024-06-25 01:02:05'),
+(58, 6, 1, '5', '2500', '0', 'ERe8m0mFYzTpkFc59ihlKWoOTqRRsYqPQlF5UWSc.jpg', '2024-06-25 07:58:24', '2024-06-25 08:01:48', '14:58:24', '2024-06-25 00:58:24', '2024-06-25 01:01:48'),
+(59, 6, 1, '5', '2500', '0', 'd7Ku3dz6ZcT39uw8RjKWmx7u8uDvo7PHul7m8af0.jpg', '2024-06-25 08:12:41', '2024-06-25 08:20:35', '15:12:41', '2024-06-25 01:12:41', '2024-06-25 01:20:35'),
+(60, 6, 1, '5', '2500', '0', 'VmfH7GEuar9W6aGxhLNZnVj9r20yI1ET9OpKAlRm.jpg', '2024-06-25 08:18:59', '2024-06-25 08:19:59', '15:18:59', '2024-06-25 01:18:59', '2024-06-25 01:19:59'),
+(61, 33, 1, '25', '12500', '0', 'rBe55x08gbWIEv4CQ8xH3i00hLC64LBzoi5GI8dp.jpg', '2024-06-26 06:09:36', '2024-06-26 07:13:47', '13:09:36', '2024-06-25 23:09:36', '2024-06-26 00:13:47'),
+(62, 34, 1, '5', '2500', '0', 'kSp0iLH0FC6BaaO5D601Ceu4nZJN0e47mv1kST8s.jpg', '2024-06-26 07:23:45', '2024-06-26 07:26:06', '14:23:45', '2024-06-26 00:23:45', '2024-06-26 00:26:06'),
+(63, 35, 1, '15', '7500', '0', 'iZBVauVS5V1M3tYZeCqQbEoi1r4yjC5MZUTJhlfh.jpg', '2024-06-26 07:30:03', '2024-06-26 07:34:15', '14:30:03', '2024-06-26 00:30:03', '2024-06-26 00:34:15'),
+(64, 36, 1, '5', '2500', '0', 'eSRiuifLuit9z1DKbL90HLGkMg880FlgUIUxCbw9.jpg', '2024-06-26 07:40:04', '2024-06-26 07:44:48', '14:40:04', '2024-06-26 00:40:04', '2024-06-26 00:44:48'),
+(65, 37, 1, '5', '2500', '0', 'KQYUvzEmozweK6aJTVHtfMvLcC8ap1ap2o0ngFn1.jpg', '2024-06-27 07:27:23', '2024-06-27 07:28:12', '14:27:23', '2024-06-27 00:27:23', '2024-06-27 00:28:12'),
+(66, 39, 1, '15', '7500', '1', NULL, '2024-06-27 07:47:13', NULL, '14:47:13', '2024-06-27 00:47:13', '2024-06-27 00:47:13'),
+(67, 41, 1, '15', '7500', '1', NULL, '2024-06-27 07:47:56', NULL, '14:47:56', '2024-06-27 00:47:56', '2024-06-27 00:47:56'),
+(68, 43, 1, '5', '2500', '1', NULL, '2024-06-27 07:51:46', NULL, '14:51:46', '2024-06-27 00:51:46', '2024-06-27 00:51:46'),
+(69, 42, 1, '5', '2500', '1', NULL, '2024-06-27 07:54:21', NULL, '14:54:21', '2024-06-27 00:54:21', '2024-06-27 00:54:21'),
+(70, 40, 1, '5', '2500', '1', NULL, '2024-06-27 07:56:41', NULL, '14:56:41', '2024-06-27 00:56:41', '2024-06-27 00:56:41'),
+(71, 38, 1, '5', '2500', '1', NULL, '2024-06-27 07:56:53', NULL, '14:56:53', '2024-06-27 00:56:53', '2024-06-27 00:56:53'),
+(72, 47, 1, '5', '2500', '1', NULL, '2024-06-27 10:45:05', NULL, '17:45:05', '2024-06-27 03:45:05', '2024-06-27 03:45:05'),
+(73, 45, 1, '15', '7500', '0', 'GAe4NeoUmncSU8gH8PvfqtziLZrFZfgWt5WpQxg5.jpg', '2024-06-29 01:13:34', '2024-06-29 01:16:33', '08:13:34', '2024-06-28 18:13:34', '2024-06-28 18:16:33'),
+(74, 12, 1, '5', '2500', '0', 'UjrWO2crUDO7rTT4vebcOpRgJI0cYqVNtN9bjJiG.jpg', '2024-07-01 05:29:59', '2024-07-01 05:36:05', '12:29:59', '2024-06-30 22:29:59', '2024-06-30 22:36:05'),
+(75, 49, 1, '5', '2500', '0', 'vAHN3WsLkME33KxRLreCqe7OVj4ALL6ZWJTpQHaU.jpg', '2024-07-01 06:07:49', '2024-07-01 06:09:33', '13:07:49', '2024-06-30 23:07:49', '2024-06-30 23:09:33'),
+(76, 52, 1, '15', '7500', '0', 'lVs3Em3EiCUcjwqZUSbqHV4HhTMn3Yj3fejMIDFv.jpg', '2024-07-01 06:32:52', '2024-07-01 07:04:20', '13:32:52', '2024-06-30 23:32:52', '2024-07-01 00:04:20'),
+(77, 50, 1, '5', '2500', '0', 'tBTAxPyODLSflNlzl8DKsyDoMCYtxjXqt3cuQi6q.jpg', '2024-07-01 06:33:14', '2024-07-01 06:36:54', '13:33:14', '2024-06-30 23:33:14', '2024-06-30 23:36:54'),
+(78, 54, 1, '15', '7500', '0', 'PDABfHnZPf8gBwkiH2fIGeMcnfeKFmDZlC22ztgp.jpg', '2024-07-01 06:34:00', '2024-07-01 06:38:42', '13:34:00', '2024-06-30 23:34:00', '2024-06-30 23:38:42'),
+(79, 53, 1, '15', '7500', '0', 'GTHkPbfQhhq0WKblySexE55dhj1rt7mdZrM9lia7.jpg', '2024-07-01 06:42:34', '2024-07-01 06:43:22', '13:42:34', '2024-06-30 23:42:34', '2024-06-30 23:43:22'),
+(80, 56, 1, '5', '2500', '0', '5FjzlPGdRqJJH9TiiXPYaAH4HHIg6m5ehGdEErbl.jpg', '2024-07-01 06:56:48', '2024-07-01 06:57:28', '13:56:48', '2024-06-30 23:56:48', '2024-06-30 23:57:28'),
+(81, 58, 1, '25', '12500', '0', 'BrBEqpL2XhPcWoO8mChXfIvDAWs5JW0OiRzFqttx.jpg', '2024-07-01 07:01:55', '2024-07-01 07:04:34', '14:01:55', '2024-07-01 00:01:55', '2024-07-01 00:04:34'),
+(82, 57, 1, '5', '2500', '0', 'y8yGVL2qfipi0EvrraOxBVwKXYxBcuCq8AVQo8VU.jpg', '2024-07-01 07:02:27', '2024-07-01 07:04:54', '14:02:27', '2024-07-01 00:02:27', '2024-07-01 00:04:54'),
+(83, 55, 1, '15', '7500', '0', 'acY6z7wvztYIjl7DMfssQ1zZKXtUqE2Hj2iw82JA.jpg', '2024-07-01 07:05:05', '2024-07-01 07:05:46', '14:05:05', '2024-07-01 00:05:05', '2024-07-01 00:05:46'),
+(84, 59, 1, '5', '2500', '0', '77Cw6eLx8bcsQ9nC0jUBbaSWNBJoCd88jPTiOJWI.jpg', '2024-07-01 07:47:20', '2024-07-01 07:48:54', '14:47:20', '2024-07-01 00:47:20', '2024-07-01 00:48:54'),
+(85, 60, 1, '5', '2500', '0', 'zk5IdbBat3UG2SGGiHFPV8A12FYPovjVhtIkjftF.jpg', '2024-07-01 07:56:19', '2024-07-01 07:57:13', '14:56:19', '2024-07-01 00:56:19', '2024-07-01 00:57:13'),
+(86, 6, 1, '5', '2500', '0', 'TCPHrma7EYi4kkchg4kUyEglScZ9vFB7mlhadU3y.jpg', '2024-07-01 12:23:21', '2024-07-01 12:31:27', '19:23:21', '2024-07-01 05:23:21', '2024-07-01 05:31:27'),
+(87, 6, 1, '5', '2500', '0', '837tb7DL51yXpue7z6KFvQpm0pwi1NLllYuZLb2r.jpg', '2024-07-17 23:40:03', '2024-07-17 23:41:02', '06:40:03', '2024-07-17 16:40:03', '2024-07-17 16:41:02'),
+(89, 12, 1, '5', '2500', '0', 'k8pALjkoEoJWSUaLE2xnwCy0go7BQgQWy40UwfjI.jpg', '2024-07-18 02:51:32', '2024-07-18 03:01:16', '09:51:32', '2024-07-17 19:51:32', '2024-07-17 20:01:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `nik` varchar(255) DEFAULT NULL,
+  `telepon` varchar(255) DEFAULT NULL,
+  `saldo` varchar(255) NOT NULL,
+  `ktm` varchar(255) DEFAULT NULL,
+  `wajah` varchar(255) DEFAULT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `nik`, `telepon`, `saldo`, `ktm`, `wajah`, `remember_token`, `created_at`, `updated_at`) VALUES
+(3, 'admin', 'admin@gmail.com', NULL, '$2y$10$HZ2K3to7BfEO08HsLCUKfO4fgWdvr2FiaL/2TLCCL/cbkmBnxE35W', '', '', '', NULL, NULL, NULL, NULL, NULL),
+(6, 'Hafidz prasetyo', 'tester33@gmail.com', NULL, '$2y$10$moiczN7SchyV8N43hFtZsu9BKaWXfFkfAUzB5U8TphGefPubuZXBm', '3517042805020004', '088805305346', '50510', 'UL4ib2J1in1Z9msBhmSDiAyQ5hehjIirT7Sry1Yw.jpg', 'S0I45WD5XIXJUAjtR13yIR5Vep1QZ4n8TKBM39Hn.jpg', NULL, '2024-05-08 23:55:12', '2024-07-17 16:40:03'),
+(7, 'mfaizkh_', 'mfaizkh21@gmail.com', NULL, '$2y$10$Al0LVJQM8t42cakNuLzp4eDLxllVx2m1Zh9vBowjT9EKhuNW1cvF.', '3503082601020002', '082232971546', '0', 'BUkroum0rVjUhvNP8q8mtauZv1xoLpKslaeWyUT1.jpg', 'osWzWWMp29MScKv9GtA8woOya1hrMbkCM12fJUZq.jpg', NULL, '2024-05-09 00:17:37', '2024-07-03 21:49:45'),
+(8, 'Dimas Kurniawan', 'dimaskurniawan1112@gmail.com', NULL, '$2y$10$iA8kW8ySWzuT.FjPBs/FY.e16aVpUZ9b/qJlPBWmLjFWxBE2cU5SS', '1605082604011000', '081297324787', '100000', 'SjffZxTPswmBRCS9MyArP9K0lMwEQpbnD24HdhZw.jpg', '71lwZNqW0SZg9RqO5MN0MGUZJpG6XBoovKazBTtS.jpg', NULL, '2024-05-28 01:10:52', '2024-06-20 00:03:57'),
+(12, 'hafidz eko prasetyo', 'hafidzprasetyo028@gmail.com', NULL, '$2y$10$i3ewsByXvpRD3TK2G3h7n.QtrW4sRqs81nNYleXzoWggTHELpuIT6', '3517042805045003', '88805305346', '15000', 'JsLVu3AH1Q7W6rvVWRg5sMARqYgwGbE1xalc7WqX.jpg', 'eHzVl9E6kJt1FES42jUZ1Uk1VR9wuo3vb3O3yCzo.jpg', NULL, '2024-06-15 19:45:39', '2024-07-17 19:51:32'),
+(14, 'Tes', 'user@gmail.com', NULL, '$2y$10$tK6RIcGJb8Vm.iiTkSWY5elz21UwgQrYDWp2KYOH0i7ozxgT48vf.', '123456789123456789', '12345678901', '87500', 'b0KbI3V3UWtI5rChZwAHnIgtZKP4DSJjxByPPAgP.jpg', 'yB8aJ5RaoK4xogVCk8rgvLfzRuRYQLnlpFNqUIKB.jpg', NULL, '2024-06-18 06:30:31', '2024-06-18 06:54:17'),
+(15, 'Lillah nur imania', 'nurimanialila@gmail.com', NULL, '$2y$10$m7Xbntm1zzRZbwrsXhNNrOnCJzd3mZFd2AvB1iVqFtW/nkRqPKiB6', '35128453295412002', '081558998752', '20000', 'ut8WyOU87jZKlthXbxrnYXngZX72rDIsNKiF4Z16.jpg', 'FsGHHrR3nedUC6FdjSCgSmrlrhKYziy8SIFML2Xt.jpg', NULL, '2024-06-19 23:52:00', '2024-06-20 00:08:58'),
+(16, 'Ahmad Rasyidin', 'aziskuliah@gmail.com', NULL, '$2y$10$rXSLQEg0.Um7JVf2Otgjxu6VVbVX0zqPUYijLBlqJ2ycLc.7RBdSO', '3515125421782001', '0895609786596', '12500', 'QHtZOG5alPfZzhJhimTsTxYnmUrbRljEBGskeP1K.jpg', '9ua9j8wywU8DsRtHukDcgkN1Xi2607C0xhD0IUju.jpg', NULL, '2024-06-19 23:53:43', '2024-06-20 00:18:37'),
+(17, 'muhammad khoirul anam', 'muhammadkhoirulanam810@gmail.com', NULL, '$2y$10$CI29RBBNn2L50eDxW84lFeYthrLgIQW9wiQfFpnQg/P4n5jJVC66K', '3508910310586180802', '087875303101', '2500', 'Lby7zoqtKXDIQwEQdcRMHeyAY5QWFGDGqZl9k1sl.jpg', 'JL61rXIXMHNgtQpjeDItepxTOLKo2faPVfxcVZ6u.jpg', NULL, '2024-06-19 23:54:18', '2024-06-20 00:06:58'),
+(18, 'Richardo Dava Satria', 'richardodava.s@gmail.com', NULL, '$2y$10$C7WnNwQ2wRRUVtLQtrhwIOaHpHyraeFjQKDQQQHd5.3705T7Y02hW', '1771060505030003', '081231954137', '7500', 'hmnZ5lr8LABSkPurcker3bWTkUENQLXg1bwEu5jc.jpg', '9qf7PCxBFEfQdMckO6BbdIUlEGo6UO0hQq4J96os.jpg', NULL, '2024-06-19 23:56:02', '2024-06-20 00:04:39'),
+(19, 'Bita Kusuma Wardana', 'wardanabitakusuma@gmail.com', NULL, '$2y$10$4eG5mXbqVRihUOllsB4rQOSDGTzILPg/3SJXCsQYUHY.yN62q2R2m', '3525100404010043', '081233610630', '22500', '0jrYVmFTTgkprudOT0dIrfLZGLI5BmCnHnRNJSKM.jpg', 'W93HiSPozXkYmGm1pJV2rxWtIRkubtQPnXncPe7e.jpg', NULL, '2024-06-20 00:04:28', '2024-06-20 00:12:49'),
+(20, 'Sania Nuril Fijrina', 'saniafijrina33145@gmail.com', NULL, '$2y$10$O/Lg.eD6rhAEET0EEgzmWuQWFVsQnDsWnhjWsxo1ie0Bw7SSxJFBy', '1234567891234567', '085608448900', '17500', 'RoKMGE3s9Ln83Hw8OMHQdN7433EUXiyhTlGdK4uu.jpg', '238Il5wymu4loUgYNbCblRgn39rlnMUSLAA8rPYT.jpg', NULL, '2024-06-20 00:15:25', '2024-06-20 00:28:34'),
+(21, 'Salwa Nadirah', 'slwndrh2518@gmail.com', NULL, '$2y$10$3HHCHftoIbbVO5J5WlMDDuM7GDyUpAnxVEjKhqh4xaqOTDPTncYnO', '3573011234567890', '089639478811', '9500', 'YUZIPtga7qAKSudfDQWHUFVnAOiVbLswkzk3Baod.jpg', '4ihQP8tnMBttHXBKIMRI9Sv8XKsGJzRsvOyWnUrl.jpg', NULL, '2024-06-20 00:15:36', '2024-06-20 00:30:52'),
+(22, 'Lillah Nur Imania', 'nurimania12@gmail.com', NULL, '$2y$10$9aoG8Fgn5c1VSuvkNlkY1OiwH5dtPiIdxCazjx5RP94wySJjXXHmy', '35120845296421854', '081558998752', '12500', 'hVMG2UHnFCaQcvesKR676Q9zjMGr7rf8yHR9HCZn.jpg', 'Ds3CZqejuddQR16F2CFAdC2rzJnLUOSpJ6nTweek.jpg', NULL, '2024-06-20 00:16:26', '2024-06-20 00:21:40'),
+(23, 'Afifah', 'afifah@gmail.com', NULL, '$2y$10$WH3CPrb.X2cwONW5lfIpDO/uZhciP0s4gR5egtyYG0yvvWSYWwwca', '8790123456789012', '081336802684', '22500', 'nRXu2YFJSPfQsdIFmlUO9SejSDFs1v7OzH6yXzL0.jpg', 'DXwPUsyLtCXe2mwJsYbitCwQQfTUM37TTVWiSsAg.jpg', NULL, '2024-06-20 00:37:45', '2024-06-20 00:45:22'),
+(24, 'Karin', 'febrikarin879@gmail.com', NULL, '$2y$10$MxvVU7YjyVpJvAIZdXsst.UytCHISoLYP1IfAgWy.Ta3GwRI8xRZm', '3507086202020001', '083843222629', '12500', '5IA8uXZifOpgExJxqaazsShxsdLwoRpetpvIIwBt.jpg', 'N28AQtPNaVHtW8qsxiN7PvzgdX65bXXl4OvuAyn7.png', NULL, '2024-06-20 00:40:02', '2024-06-20 01:01:17'),
+(25, 'Sinta Winda Purnamasari', 'sintawps00@gmail.com', NULL, '$2y$10$SAraQYXdsweOmavUL/NlguvgXaV6Z5NpRtajho63v3BmiC9.pBH5a', '3514735196428531', '081555629767', '12500', '1ciIKnAEbKd85OqUKiqJQpVP3VmK1SkPDsahZUrj.jpg', 'tNxyRcnY4CBlodjhpabXQI8Ik1M5XNg9f1OZPwdq.jpg', NULL, '2024-06-20 00:40:41', '2024-06-20 00:50:28'),
+(26, 'Dhias Dewa Ananta', 'dhiasdewaananta87@gmail.com', NULL, '$2y$10$LgSYM7E6rziIaxHThYgUqeGAmj6nBp4vDnO6JbKmT5dW5u1JXwtzy', '3573083213692581', '081230890818', '2500', 'RYFR0EoypVVFq4s2mg9GSxUCCGJsoNkF8XLkpkS6.jpg', 'bWV9mCVqoIyx0TvaDF4mw49XONGORd2hN42xC7YQ.jpg', NULL, '2024-06-20 00:52:58', '2024-06-20 00:59:15'),
+(27, 'Rhenuka ayusha hapsari', 'rhenuka.sha@gmail.com', NULL, '$2y$10$vt8IUqebwMEgJHCILGDVNea2LXtXheJvKmsOQechYxMGAkMoWjPzG', '3536965487123695', '081231076072', '7500', 'WAhdAEsJjYvkja6A6dm1Y1J15xSCEHpAEv3QfuY9.jpg', 'DYSnimz795zxYtZJPhqAGiJLDX8k1N7h3AywlskQ.jpg', NULL, '2024-06-20 01:06:43', '2024-06-20 01:11:22'),
+(28, 'Muhammad Daffa', '2041150113@student.polinema.ac.id', NULL, '$2y$10$FIMH3b7uubxxjP1WMHrtEe9hnpId7ZdE614C4/83O1nM2Nfp1.4RK', '1234567891876485', '087776658804', '12500', '7inxv5AD1Kjfdn7GNUKWffPTuDefPOQQlGaGkBBR.jpg', 'qhPgDCK0vmcmbMMYGaQDxRVsssOJM07z6DrU5JPL.jpg', NULL, '2024-06-20 01:19:36', '2024-06-20 01:22:14'),
+(29, 'Ivana Arum', 'ivanaarumd@gmail.com', NULL, '$2y$10$dh5Q5kBm69ABN.8mG9Vix.DjXx6/foUsBE/fpjlnlmAYTqLI3Xq6u', '3578111020001111', '0895342304470', '12500', 'JhtgQdnAnH7LJ8oVyfm6Q2mrAbuVlcD0idGM8dT8.jpg', 'Bj9gB6wxHGedcHw6ZRuMtUWIjgQtaQ2j5CvGJUpy.jpg', NULL, '2024-06-20 01:36:08', '2024-06-20 01:44:32'),
+(30, 'Khurnia', 'khurniafiddi@gmail.com', NULL, '$2y$10$M1txgti0aoOFAVgyk.QSde1S1dOlkGYMCX.8L.UBUYDqhvxoApara', '3502055501020006', '085338118966', '7500', 'X5NUaClBYBoX03nn55OvB20sL1ryj19rnbPmKiPF.png', '9eQyiewxyHBAZVDpGXUQxsGH82xOeDTsJOhjsqQ6.jpg', NULL, '2024-06-20 01:43:57', '2024-06-20 01:56:26'),
+(31, 'Miftah Nurul Amelia', 'tatacan1701@gmail.com', NULL, '$2y$10$jTvDzMwn5NNI1WS4.waJMOsb1JDqF9hb2pJ27RL81h3Yi/LZuhEp2', '1234567891011123', '085780090836', '7500', 'uEnXIu3jy0CXoIalgU7wAULE1A4dOPenAxGFguid.jpg', 'Kka1jbmDsvpJTxoUrlev9l2BPFMKcrCH2slrqapQ.jpg', NULL, '2024-06-20 02:00:58', '2024-06-20 02:03:57'),
+(32, 'Rafli Dewantoro', 'wasedaboy302@gmail.com', NULL, '$2y$10$jIWBIKdGS1LNzRSqJeYg.ep3XePqo2IRav8zwBixxeiV1pPhG.lSm', '20411600752041160075', '085386401900', '6500', 'Vb5DFb1rvIND57dh5LufLg0KAPWbFZ4aAqgPbS8z.jpg', 'TncBoqlvK0QxbF5NWyo4CzcvUv64HR8L4sI0EWit.jpg', NULL, '2024-06-20 02:06:29', '2024-06-20 02:16:39'),
+(33, 'Fakri Muhammad', 'fakrimhmmd@gmail.com', NULL, '$2y$10$J/vRENWUPS9cu0Uup0r6AuICo86fzepYdcyuHECXxiWk0Pq5Ay4FS', '1234567891234567', '081235158924', '2500', 'GJv3NsX45zDN5l4ilgB9L3Wbw3gPJQH1JRp7y7PA.jpg', 'hJSQ1A8KJMoAtf7SdH7RPwoqtTGsUF9F1ohDRo1X.jpg', NULL, '2024-06-25 22:59:26', '2024-06-25 23:09:36'),
+(34, 'salsa andhika', 'salsaand7@gmail.com', NULL, '$2y$10$rWDSVk5C6kHT/R8eV8l/Rurbw18LMydfBr0hyiWYeqzlteIshknfS', '3528085307020001', '085707105440', '12500', 'BPk5Y2Qvm2RunHsbGcsHLUat193L7bF93dwvbaVT.pdf', '1ak2bQvscvTmtHPEXuIkzPrdYMYPfpxRNt02e0Z9.jpg', NULL, '2024-06-26 00:15:19', '2024-06-26 00:23:45'),
+(35, 'Berliana', 'berlianabastiar1903@gmail.com', NULL, '$2y$10$lhOAXInib.WX7hNPHqEY2OSJOJiffTLj5PVf0RGobr9mdDRw2vTua', '0496257961586950', '085749098135', '2500', 'cDVyfgvoSxRXhWsu4fZsaIr8Ix8kbdglmOBDlyFj.jpg', '4WxAu6ogH4Ih4U6h6qMxXH9f3IjCYsgMUdXhADv8.jpg', NULL, '2024-06-26 00:16:26', '2024-06-26 00:30:03'),
+(36, 'Rizky Maulana', 'maulan1818@gmail.com', NULL, '$2y$10$jZQPGGrTOiG/NaiRpfoW8OfNlr75Ych1p9ZlJt7nBoH/jn05jOVuC', '3516111809010003', '082264373755', '7500', 'RlpLoAXjqR5LObU0KRlrdU59LsCFSfQPVYAnHlSy.jpg', 'a5KVF7hn3f92wXIdBNJZhuUlqzErKk4tg9VwaSKA.jpg', NULL, '2024-06-26 00:23:00', '2024-06-26 00:40:04'),
+(37, 'Fanisa Putri', 'frakhmadanty@gmail.com', NULL, '$2y$10$BtQwugvzUoDRZBLVoVPpkOP4Qsr8Pv7SGqMRpLtzwtVvemvtjqBLS', '3525143180926504', '082334982562', '7500', 's3ayivS7iXEgvUWjUyj7tS90KfhPOa6XPRHCbccS.jpg', 'LrVlgKngVkG6oG4v7MI84g7ZusHA22mwQvPDqUcb.jpg', NULL, '2024-06-27 00:19:38', '2024-06-27 00:27:23'),
+(38, 'Shinta', 'slaurensiadewa@gmail.com', NULL, '$2y$10$UwCkKDnftoPcdDu4PG4IhedhtGBNcKUAw.cV/6s2ywhjSkuzeU11K', '1234567890123456', '087884080394', '12500', 'LyXvU7pFIavuIHrE5f7J6IQ82gipHMTHecwtijwv.heic', 'U3exsTA0fNKrjrNdf5Y7U5emi3bWKgNdrBrigASW.jpg', NULL, '2024-06-27 00:37:16', '2024-06-27 00:56:53'),
+(39, 'Yusra Linda', 'yusralinda.24@gmail.com', NULL, '$2y$10$FgIL/y8t0aJsKebIFf2SMuUtU2JcN8l4WBxYx0Swb56DyiKuD0Vny', '1244136552652480', '082268644725', '2500', 'qPuErDk2L66Di0ganEvRMvmyeeGBPHaq1JTJ9GBD.jpg', 'j3hj3h1kWmu5qDh7DkBiUOViiEbHVGNsUfzOFGUn.jpg', NULL, '2024-06-27 00:37:19', '2024-06-27 00:47:13'),
+(40, 'Millatul Karimah', 'millatulkarimah02@gmail.com', NULL, '$2y$10$vJf/ZC0jFygh5zYdFc1TTeI/eIu0bD6LV/9ef1GBnVhp9Nbtsg8Pq', '1234567899876543', '085604255792', '7500', 'Zhu7yhCILmncNJMPxGJ9qblIuVYZlObEOW0WYvCr.jpg', 'sfbiUYrFiSUdeqQaYkYQInNwhmgEYMpOQ4GreOQt.jpg', NULL, '2024-06-27 00:37:29', '2024-06-27 00:56:41'),
+(41, '\'Aisyah Az Zahra', 'aa8825072@gmail.com', NULL, '$2y$10$bgTR5O5KyqVgqoZxq5Rju.Hl4UGzZMNID0e0oYI/WLzlhmES222He', '1234567891011121', '081230080884', '2500', 'HEMInSP609wttYtYwSglVOKes4sY7yUPs2ZuwGU6.jpg', 'DNB4XPLES1uWNkmlJgLMGifmGEM5OHwewuHwi4oT.jpg', NULL, '2024-06-27 00:37:52', '2024-06-27 00:47:56'),
+(42, 'Lailil Aulia Rizka', 'laililaulia.03@gmail.com', NULL, '$2y$10$lCKI6nuFg9YTr5JtqJm5WOCRN3wStul.NISDL4VRXh1pcLu510u2q', '3531456987456321', '085230759228', '17500', '3GRxpPHWWnwBaHfVSS34xIj3hwXogE7BbRTGpvhi.jpg', '2hi6mg21bKmplaOlW2RERpMxBQ9Uk50K4XGarGM9.jpg', NULL, '2024-06-27 00:37:55', '2024-06-27 00:54:21'),
+(43, 'Nadya', 'nadyasani8700@gmail.com', NULL, '$2y$10$lM2tj5ef5zfoVRcZ2Lb3yelGiK49wprGfQFSvpL9mcgD4FgzUgGla', '1234567891011112', '081282166929', '19500', 'wxZ0DT2XbtEYlyGNawbCTSGkkDY1zOJIgwiFjv46.jpg', 'FVXboltZiBr1GlbrbureNRIwzwpURYgdmkIQnL3F.jpg', NULL, '2024-06-27 00:39:05', '2024-06-27 00:51:46'),
+(45, 'Gilang Sangsaka', 'gsangsaka77@gmail.com', NULL, '$2y$10$/CKyJtR6zOqVARR/ohYzj.L8HVvVdKNK5vmVcipmYKZ.fSAWakIcC', '1234567812345678', '085718047550', '42500', 'LIpVjX9fVWEQP4CospYZau7QFpwut5KmL15OtkI5.jpg', 'RURKgdr6fdQhQA5SEP2KzKhigS8ff0RmnxVv8m11.jpg', NULL, '2024-06-27 00:56:31', '2024-06-28 18:13:34'),
+(47, 'Yoga', 'wisesayoga5@gmail.com', NULL, '$2y$10$0nuLnNJ5xQHOUR5DjKo.keVpbCN40n7gOfteMDw46PjFAK6ZlL2.C', '3514063105020001', '085228049405', '22500', 'ehZU2qYn7dQ0152uY2GEXGElmqu7nR24rRL00f5B.pdf', 'htdFKqqCrqkCvOlflliunDt7qTH8RKDhPvrUFAJd.jpg', NULL, '2024-06-27 03:38:50', '2024-06-27 03:45:05'),
+(48, 'Muhammad Dhorul', 'm.dhorul@gmail.com', NULL, '$2y$10$waWh61lGXc431IKZ3XUpBeLYQJxJbbOZJLY9yCpaiLnVjjIbYrzEu', '3576060501010001', '081217816018', '0', NULL, NULL, NULL, '2024-06-27 10:30:24', '2024-06-27 21:11:30'),
+(49, 'Ahmad Fadhlan Sueby', 'ahmadfadhlan12@gmail.com', NULL, '$2y$10$aqHyh/zfOAMtVM.y7/04DO9r092I1V1idYAglvO0JA2SfdTQxJgnW', '3514080502000223', '082246450741', '12500', 'xZ9CdeSyUPaKwfm9hN4SYtSNIxreM1ZGZXQ0o68n.jpg', 'MLjnweCzOye9BIVXbzXbBF1eJT2p0ZZi8vKYN1CU.jpg', NULL, '2024-06-30 22:59:00', '2024-06-30 23:07:49'),
+(50, 'Elvira', 'elvira191001@gmail.com', NULL, '$2y$10$sG7Q2nY9ECPZ0SAIYK4tFOhNOqkfh.IBbHF85PPa7CPkyrGNoa.6a', '3510080010010001', '085156068924', '12500', '7bIGobLz7Hnbhk8vYqB29FkxHV77Mu0jhjygFlbN.jpg', 'Y9Hi5I1VTsF4C4yvU0mZ6lAi2PDmGL3m4AQ6sSXQ.jpg', NULL, '2024-06-30 23:20:55', '2024-06-30 23:33:14'),
+(51, 'Kusuma Dewi', 'kdewi456789@gmail.com', NULL, '$2y$10$/9ZWvkRMyp2dItiwEeXJK./ox3uiHF34svlR01DHEnAZOmtr2r9m6', NULL, NULL, '0', NULL, NULL, NULL, '2024-06-30 23:23:09', '2024-06-30 23:23:09'),
+(52, 'Septian Lanjar', 'septianlanjar82@gmail.com', NULL, '$2y$10$9dQKLfg5itC4mr/2iWIiceVOiGKBB9WVlxveKicy0jOfX7qddFb5a', '3305040901073748', '085815156850', '7500', 'qywwsx5FV52nh2B06XrFyfxsqDfJBaYEUjHiZjJh.jpg', 'COzuglB6RHMNeJZZeIBlv3Qvsg84aqYuQvGc9jW7.jpg', NULL, '2024-06-30 23:23:33', '2024-06-30 23:32:52'),
+(53, 'Anisya Kirana Hartono', 'anisyakirana.10@gmail.com', NULL, '$2y$10$hIdRS1Hx6OJ29ABRD77XzOxCRqEVfgeeASv9XfdPk4OHddV3Yp9eK', '51332111090270002', '08176564877', '7500', '6Shg0Pfhxa0g7leY9DUGg9hSOJuBfVuiZkpoPdj8.jpg', 'YmhM8y3xqdB23bUIo0YfWtbjXTA049BSf3hlJbEr.jpg', NULL, '2024-06-30 23:23:42', '2024-06-30 23:42:34'),
+(54, 'Erna Nurvita', 'ernanurvita12@gmail.com', NULL, '$2y$10$b5R9A2a6Uh01mrX8.mO5YueJ8pCzv2GlQGJenpcCtJ45J3y1ZKbsK', '35456789996464215', '088235516202', '2500', 'TAtuLTXGKRtvfV8t7jMgdFREajTNxEWDwENTwRnS.jpg', 'TTjFIBl0n4hmy7EUIrbSRtH8cgGQey85ABL2Eqwh.jpg', NULL, '2024-06-30 23:26:20', '2024-06-30 23:34:00'),
+(55, 'KUSUMA DEWI PUSPITASARI', 'Filecampuran4@gmail.com', NULL, '$2y$10$Krl3BnjK5j2IHatoQlx/4OdNa4zElvhkSP2ZKDPTJWl.r9W/ekGW.', '3511238452137964', '083845032151', '7500', 'jXcsUQVmoSmWJcYytpx7QOM7LaDIltFuGQ4Npkwp.jpg', 'IWbx5QuXmioduiDSYo3aEsZWEDTYRzfmXiDXpK5G.jpg', NULL, '2024-06-30 23:36:45', '2024-07-01 00:05:05'),
+(56, 'modestaberliansa', 'modestaberliansa15@gmail.com', NULL, '$2y$10$k5x1KSyZ8CFV1PwLNLrcP.A5.YjLzg7YXSWRU6Cy4UolgfHI.41DG', '3502987526712368', '081357194106', '12500', '70qlR6suvSKpC2R7hLQtEyyqNVmsATm4sD6Dw82A.jpg', 'qzNjjvwmgqDC526AnPBhx8sQhJFBDkSZjukwRGUJ.jpg', NULL, '2024-06-30 23:50:09', '2024-06-30 23:56:48'),
+(57, 'Abirawa', 'abirawa2002@gmail.com', NULL, '$2y$10$Gh7UbvE678vlyGVfjD60Yu9E65AN725l5OBNj/2fm9SMGK40CNtcC', '3571567890876540', '089608925510', '17500', 'dTX0LWuKHosKSETgYwInAeWMWpn3EtUr9ii8J4HE.jpg', 'um7CUQlBaRx7VCUn9ZzDd5wUPdFDN3CCjV7CFhlx.jpg', NULL, '2024-06-30 23:56:45', '2024-07-01 00:02:27'),
+(58, 'Belinda', 'rotibkr16@gmail.com', NULL, '$2y$10$K2PrhYgkVDBgXIy4D3DIaucc.CKxEFloDWTVd.2Vwq1FhB14WceqO', '3576232506010001', '089667425502', '2500', 'U0YsZdGEtFNUHYEETc0QyZXNoBNmYTWm2Esi6QPa.jpg', 'OU4xJQSLBS8opxF59kJqxEuuEYzkxrSabrnkesfG.jpg', NULL, '2024-06-30 23:57:45', '2024-07-01 00:01:55'),
+(59, 'Eno Budhi Triadmaja Putra', 'enobudhi7@gmail.com', NULL, '$2y$10$7UnsjfW67CLkSnD8vnE.dOPs/2BUDFtro4OkjsIe90YOuA3ZzLr7u', '3516060701020001', '081358008297', '15500', '2AEtEeGYilTT2CdV3CKHXmrgoOjBnop8H4Xza7zB.jpg', 'wd4w6zA0GKqYHibAUT60Q7dTkFcf8YmWVCGNEHTe.jpg', NULL, '2024-07-01 00:37:59', '2024-07-01 00:47:20'),
+(60, 'Natasha Dwi Pramudita', 'natashadwipramudita@gmail.com', NULL, '$2y$10$CcnavaQYgwmYwQ14wcebEuoCnnaisnhd5Y5KUezwy8QRe0oxWVvFO', '3501478523690183', '0895366996023', '12500', 'QXJnyVHdXzTiPrAdWNsZu7Fmr7CreB31fYDDp4Nk.jpg', 'EhdLILaBW2C13073agRD1f6rwGv2KqybNu8CoBA8.jpg', NULL, '2024-07-01 00:51:48', '2024-07-01 00:56:19'),
+(61, 'hafidz eko prasetyo', 'hafidzprasetyo28@gmail.com', NULL, '$2y$10$7n/MFybDmaFDxWEpU3e7s.CNaIDB61FL8qfCRNd8Y0iHBTd4ap9fG', '3517042805020087', '088805305346', '0', 'xDDqnwSh87npDyNfn0IyMNpwSqicdYiphvGMuAkv.jpg', '3iVO23HARlJkeyOP9d5uV73sSsHWgSlmcJnrs9nl.jpg', NULL, '2024-07-01 05:03:03', '2024-07-01 05:04:34'),
+(62, 'Amartya', 'amartya4707@gmail.com', NULL, '$2y$10$32roamNi1xGHzpalZazzq.wT5AbyRh7ZEax8.H1fDErw/Fm5NM4jG', NULL, NULL, '0', NULL, NULL, NULL, '2024-07-09 10:56:45', '2024-07-09 10:56:45'),
+(63, 'Dimas Kurniawan', 'yourfavv26@gmail.com', NULL, '$2y$10$hXmYVXv3yhN824sSva2/P.RPm/VIy8JkygPtcOgaAxDj5nnJ7oaoC', '1605082604018888', '081297324787', '1000000', 'UFgdl9EpLiVYfglaRQcqlttGzWbCmE0udyeOQShU.jpg', 'TvgmM4b42ui3WSzEEoHRXp59XkQJ7HLBDupS8bj8.jpg', NULL, '2024-07-17 07:24:09', '2024-07-17 07:29:22');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `dataa`
+--
+ALTER TABLE `dataa`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ebikes`
+--
+ALTER TABLE `ebikes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `minimums`
+--
+ALTER TABLE `minimums`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `parkirs`
+--
+ALTER TABLE `parkirs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_bike` (`id_bike`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `password_reset_tokens`
+--
+ALTER TABLE `password_reset_tokens`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Indexes for table `points`
+--
+ALTER TABLE `points`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `polygons`
+--
+ALTER TABLE `polygons`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `polylines`
+--
+ALTER TABLE `polylines`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `saldos`
+--
+ALTER TABLE `saldos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_user` (`id_user`);
+
+--
+-- Indexes for table `sewas`
+--
+ALTER TABLE `sewas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_user` (`id_user`) USING BTREE,
+  ADD KEY `id_bike` (`id_bike`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `dataa`
+--
+ALTER TABLE `dataa`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `ebikes`
+--
+ALTER TABLE `ebikes`
+  MODIFY `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `minimums`
+--
+ALTER TABLE `minimums`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `parkirs`
+--
+ALTER TABLE `parkirs`
+  MODIFY `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `points`
+--
+ALTER TABLE `points`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `polygons`
+--
+ALTER TABLE `polygons`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+--
+-- AUTO_INCREMENT for table `polylines`
+--
+ALTER TABLE `polylines`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `saldos`
+--
+ALTER TABLE `saldos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
+--
+-- AUTO_INCREMENT for table `sewas`
+--
+ALTER TABLE `sewas`
+  MODIFY `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `parkirs`
+--
+ALTER TABLE `parkirs`
+  ADD CONSTRAINT `ebike` FOREIGN KEY (`id_bike`) REFERENCES `ebikes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `saldos`
+--
+ALTER TABLE `saldos`
+  ADD CONSTRAINT `saldos_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `sewas`
+--
+ALTER TABLE `sewas`
+  ADD CONSTRAINT `sewas_ibfk_1` FOREIGN KEY (`id_bike`) REFERENCES `ebikes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
